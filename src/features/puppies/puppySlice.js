@@ -26,26 +26,26 @@ const puppyApi = api.injectEndpoints({
       query: (id) => "players/" + id,
       transformResponse: (response) => response.data,
       transformErrorResponse: (response) => response.error,
-      providesTags["Puppy"],
-    })
+      providesTags: ["Puppy"],
+    }),
     addPuppy: build.mutation({
       query: (player) => ({
         url: "players",
         method: "POST",
         body: player,
         transformResponse: (response) => response.data.newPlayer,
-        transformErrorResponse: (response) => response.error
+        transformErrorResponse: (response) => response.error,
       }),
-      invalidatesTags: ["Puppy"]
-    })
+      invalidatesTags: ["Puppy"],
+    }),
     deletePuppy: build.mutation({
       query: (id) => ({
         url: "players/" + id,
         method: "DELETE",
-        
+        transformErrorResponse: (response) => response.error,
       }),
-      invalidatesTags: ["Puppy"]
-    })
+      invalidatesTags: ["Puppy"],
+    }),
   }),
 });
 
