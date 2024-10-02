@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDeletePuppyMutation, useGetPuppyQuery } from "./puppySlice";
 
 /**
@@ -15,6 +14,7 @@ export default function PuppyDetails({ selectedPuppyId, setSelectedPuppyId }) {
 
   function removePuppy(id) {
     setSelectedPuppyId();
+    console.log("Adopting Doge by id", id);
     deletePuppy(id);
   }
 

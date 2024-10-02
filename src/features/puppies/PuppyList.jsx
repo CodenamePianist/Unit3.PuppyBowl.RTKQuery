@@ -7,7 +7,7 @@ import { useGetPuppiesQuery } from "./puppySlice";
  */
 export default function PuppyList({ setSelectedPuppyId }) {
   // TODO: Get data from getPuppies query
-  const { data: puppies = [], isLoading, error } = useGetPuppiesQuery();
+  const { data: puppies = [], isLoading } = useGetPuppiesQuery();
 
   return (
     <article>
