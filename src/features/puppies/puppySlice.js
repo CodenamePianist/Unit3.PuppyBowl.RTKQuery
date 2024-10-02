@@ -44,7 +44,6 @@ const puppyApi = api.injectEndpoints({
         method: "DELETE",
       }),
       invalidatesTags: ["Puppy"],
-      transformErrorResponse: (response) => response.data.error,
     }),
   }),
 });
